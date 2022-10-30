@@ -1,0 +1,18 @@
+name: action-triggered-on-pull-request-and-file-change
+run-name: pull request action is triggered on file change
+on:
+  pull_request:
+    paths:
+    - '.gitignore'
+jobs:
+  pull-request-job1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - run: npm install -g bats
+      - run: bats -v
+
+ 
