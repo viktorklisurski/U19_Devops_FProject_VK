@@ -1,8 +1,9 @@
 name: action-triggered-on-pull-request-and-file-change
 run-name: pull request action is triggered on file change
-on: pull_request:
-      paths:
-      - '.gitignore'
+on:
+  pull_request:
+    paths:
+    - '.gitignore'
 jobs:
   pull-request-job1:
     runs-on: ubuntu-latest
